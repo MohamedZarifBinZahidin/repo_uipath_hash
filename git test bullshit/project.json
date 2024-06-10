@@ -4,7 +4,7 @@
   "description": "Blank Process",
   "main": "Main.xaml",
   "dependencies": {
-    "LibGit2Sharp": "[0.30.0]",
+    "LibGit2Sharp": "[0.29.0]",
     "UiPath.Excel.Activities": "[2.23.3-preview]",
     "UiPath.Mail.Activities": "[1.22.2]",
     "UiPath.System.Activities": "[24.3.1]",
