@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>816.8,814.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>816,960.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -95,7 +95,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="416,749.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="416,896" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:PasswordCredentials" Name="ACMECredential" />
     </Sequence.Variables>
@@ -109,22 +109,19 @@
     <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="353.6,88" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="external_stuff\login_thingy\General\GetCredentials.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="353.6,146.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="external_stuff\login_thingy\General\GetCredentials.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_CredentialName">
-          <Literal x:TypeArguments="x:String">ACMECredential</Literal>
-        </InArgument>
-        <OutArgument x:TypeArguments="ui:PasswordCredentials" x:Key="out_ACMECredentials">
-          <VisualBasicReference x:TypeArguments="ui:PasswordCredentials" ExpressionText="ACMECredential" />
-        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_CredentialName">ACMECredential</InArgument>
+        <OutArgument x:TypeArguments="ui:PasswordCredentials" x:Key="out_ACMECredentials">[ACMECredential]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="external_stuff\login_thingy\ACME\ACMELogin.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="353.6,137.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="external_stuff\login_thingy\ACME\ACMELogin.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="external_stuff\login_thingy\ACME\ACMELogin.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="353.6,146.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="external_stuff\login_thingy\ACME\ACMELogin.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_URL">
-          <Literal x:TypeArguments="x:String">https://acme-test.uipath.com</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="ui:PasswordCredentials" x:Key="in_Credential">
-          <VisualBasicValue x:TypeArguments="ui:PasswordCredentials" ExpressionText="ACMECredential" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_URL">https://acme-test.uipath.com</InArgument>
+        <InArgument x:TypeArguments="ui:PasswordCredentials" x:Key="in_Credential">[ACMECredential]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="external_stuff\others\navigate_to_work.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="353.6,137.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="external_stuff\others\navigate_to_work.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
