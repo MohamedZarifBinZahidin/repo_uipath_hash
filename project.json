@@ -2,7 +2,7 @@
   "name": "Git Testing Project",
   "projectId": "5e5a6ca6-3336-4a8c-acea-13dc1571d292",
   "description": "GIGIGTY",
-  "main": "Main.xaml",
+  "main": "Zarif_Hash_Attempt_1\\Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.23.2-preview]",
     "UiPath.Mail.Activities": "[1.22.1]",
@@ -49,8 +49,8 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "c78ba19e-260b-4479-bcc4-78dffe6a8fe6",
+      "filePath": "Zarif_Hash_Attempt_1\\Main.xaml",
+      "uniqueId": "76587483-c222-419f-80e7-3bfc162e1d9f",
       "input": [],
       "output": []
     }
